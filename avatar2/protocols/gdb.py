@@ -158,11 +158,11 @@ class GDBResponseListener(Thread):
         if response['type'] == 'console':
             self.collect_console_output(response)
         elif response['type'] == 'log':
-            pass  # TODO: implement handler for log messages
+            self.collect_console_output(response)
         elif response['type'] == 'target':
-            pass  # TODO: implement handler for target messages
+            self.collect_console_output(response)
         elif response['type'] == 'output':
-            pass  # TODO: implement handler for output messages
+            self.collect_console_output(response)
         elif response['type'] == 'notify':
             return self.parse_async_notify(response)
 
